@@ -1,4 +1,4 @@
-#Chat between shared data
+# Chat between shared data
 
 send_message()   |-> ------ | receiving() 
 
