@@ -14,9 +14,9 @@ int main(int argc, char *argv[]){
 	char *shm = shmat(shmid,NULL,0);
 	ERRCHECKER_shared_memory_atteching(shm);
 
-	send_messege("what??",shm);
+	send_messege(argv[1],"what??",shm);
 	reciving(shm);
-	send_messege("woooo",shm);
+	send_messege(argv[1],"woooo",shm);
 	return 0;
 }
 

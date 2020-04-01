@@ -16,7 +16,7 @@ int main(int argc, char *argv[]){
 	ERRCHECKER_shared_memory_atteching(shm);
 
 	reciving(shm);
-	send_messege("resp", shm);
+	send_messege(argv[1],"resp", shm);
 	reciving(shm);
 
 	return 0;

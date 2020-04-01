@@ -3,10 +3,12 @@
 #define ENDING_CHAR '\n'
 
 
-void send_messege(char *messege, char *shm){
+void send_messege(char *sender, char *messege, char *shm){
+	char sent_messege [strlen(messege)+strlen(sender)+20];
+	sprintf(sent_messege,"%s: %s",messege,sender);
        	int messege_length = strlen(messege);
 	// copy a message to the shared memory
-	memcpy(shm,messege,messege_length*sizeof(char)); // now shm points to a string equals message
+	memcpy(shm,sent_messege,messege_length*sizeof(char)); // now shm points to a string equals message
 
 	// add a '\0' to the string to make it a proper one
 	/*shm += 11; // move 11 steps now shm is right after the hello world thing*/
