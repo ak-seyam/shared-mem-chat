@@ -15,7 +15,7 @@ int main(int argc, char *argv[]){
 	char *shm = shmat(shmid, NULL , 0);
 	ERRCHECKER_shared_memory_atteching(shm);
 	if (argc == 1)
-		sender = "server";
+		sender = "client";
 	else if (argc == 2)
 		sender = argv[1];
 	reciving(shm);
