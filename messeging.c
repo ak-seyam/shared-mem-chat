@@ -1,5 +1,5 @@
 #include"messeging.h"
-
+#include<string.h>
 #define ENDING_CHAR '\n'
 
 
