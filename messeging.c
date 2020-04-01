@@ -2,8 +2,9 @@
 
 #define ENDING_CHAR '\n'
 
+
 void send_messege(char *messege, char *shm){
-	int messege_length = strlen(messege);
+       	int messege_length = strlen(messege);
 	// copy a message to the shared memory
 	memcpy(shm,messege,messege_length*sizeof(char)); // now shm points to a string equals message
 
