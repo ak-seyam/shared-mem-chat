@@ -1,12 +1,10 @@
-# Chat between shared data
+Chat between shared data
 
-send_message()   |-> ------ | receiving() 
+How the protocol works:
 
-waiting_for_done |          |
-
-                 | ----- <- | done
-
-waiting receiving|	   | wait_to_avoid_stalling_second
-
-		 | ----- <- | send_messege()
+send_message()    |-> ------ | receiving() 
+waiting_for_done  |          |
+                  | ----- <- | done
+waiting receiving |	    | wait_to_avoid_stalling_second
+		  | ----- <- | send_messege()
  
