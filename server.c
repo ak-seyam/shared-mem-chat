@@ -14,8 +14,8 @@ int main(void){
 	char *shm = shmat(shmid,NULL,0);
 	ERRCHECKER_shared_memory_atteching(shm);
 	send_messege("what??",shm);
-	stall(shm);
-	sleep(1);
+	/*stall(shm);*/
+	/*sleep(1);*/
 	reciving(shm);
 	return 0;
 }

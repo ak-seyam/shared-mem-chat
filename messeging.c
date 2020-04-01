@@ -10,6 +10,8 @@ void send_messege(char *messege, char *shm){
 	// add a '\0' to the string to make it a proper one
 	/*shm += 11; // move 11 steps now shm is right after the hello world thing*/
         *(shm+messege_length) = '\0';
+	stall(shm);
+	sleep(1);
 }
 
 void reciving(char *shm){
@@ -22,6 +24,7 @@ void reciving(char *shm){
 
 	printf("\n");
 	*shm = ENDING_CHAR;
+	sleep(1);
 }
 void stall(char *shm){
 	while (*shm != ENDING_CHAR) // stall and clear

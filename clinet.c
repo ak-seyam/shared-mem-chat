@@ -15,9 +15,10 @@ int main(void){
 	char *shm = shmat(shmid, NULL , 0);
 	ERRCHECKER_shared_memory_atteching(shm);
 	reciving(shm);
-	sleep(1);
+	/*sleep(1);*/
 	send_messege("resp", shm);	
-	stall(shm);
+	/*stall(shm);*/
+	/*sleep(1);*/
 	return 0;
 }
 
