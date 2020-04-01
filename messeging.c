@@ -1,12 +1,14 @@
 #include"messeging.h"
-
+#include <unistd.h>
+#include<string.h>
 #define ENDING_CHAR '\n'
 
 
 void send_messege(char *sender, char *messege, char *shm){
-	char sent_messege [strlen(messege)+strlen(sender)+20];
-	sprintf(sent_messege,"%s: %s",messege,sender);
-       	int messege_length = strlen(messege);
+	char sent_messege[strlen(messege)+strlen(sender)+20];
+	sprintf(sent_messege,"%s: %s",sender,messege);
+
+       	int messege_length = strlen(sent_messege); 
 	// copy a message to the shared memory
 	memcpy(shm,sent_messege,messege_length*sizeof(char)); // now shm points to a string equals message
 

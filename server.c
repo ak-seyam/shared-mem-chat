@@ -4,6 +4,7 @@
 #include<sys/ipc.h>
 #include<sys/shm.h>
 #include"err_checking.h"
+#include"messeging.h"
 
 #define SH_BUFFER_SIZE 128
 
