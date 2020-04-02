@@ -10,7 +10,7 @@
 
 void send_message(char *sender, char *message, char *shm){
 	/*printf("log: session opened\n");*/
-	printf("           \n");
+	/*printf("           \n");*/
 	*shm = '*';
 	stall('#',shm);
 	char sent_message[strlen(message)+strlen(sender)+20];
@@ -23,13 +23,13 @@ void send_message(char *sender, char *message, char *shm){
 	/*shm += 11; // move 11 steps now shm is right after the hello world thing*/
         *(shm+message_length) = '\0';
 	stall_sending(shm); // stall till the receiver gives an OK response
-	printf("           \n");
+	/*printf("           \n");*/
 }
 
 void reciving(char *shm){
 	stall('*',shm);
 	*shm = '#';
-	printf("           \n");
+	/*printf("           \n");*/
 	while ( *shm == '#' ){ // internal quick stall
 	}
 	// traverse through the string pointing to by the shared memory pointer
@@ -43,7 +43,7 @@ void reciving(char *shm){
 
 	printf("\n");
 	*shm = ENDING_CHAR;
-	printf("           \n");
+	/*printf("           \n");*/
 }
 void stall_sending(char *shm){
 	stall(ENDING_CHAR, shm);
