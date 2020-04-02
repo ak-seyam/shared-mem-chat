@@ -22,9 +22,9 @@ void send_message(char *sender, char *message, char *shm){
 }
 
 void reciving(char *shm){
-	printf("-----------\n");
 	stall('*',shm);
 	*shm = '#';
+	printf("-----------\n");
 	while ( *shm == '#' ){ // internal quick stall
 	}
 	// traverse through the string pointing to by the shared memory pointer
