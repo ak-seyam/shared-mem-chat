@@ -25,6 +25,7 @@ int main(int argc, char *argv[]){
 	reciving(shm);
 	send_message(sender,"welcome to the best chatting software ever made", shm);
 	reciving(shm);
+	reciving(shm);
 	return 0;
 }
 

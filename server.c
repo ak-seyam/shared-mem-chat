@@ -26,6 +26,7 @@ int main(int argc, char *argv[]){
 	send_message(sender,"woooo",shm);
 	reciving(shm);
 	send_message(sender,"totally agree!",shm);
+	send_message(sender,"totally agree!",shm);
 	return 0;
 }
 
