@@ -1,4 +1,6 @@
 Chat between shared data
+Issues to be solved:
+You can't send twice from a single participate
 
 How the protocol works:
 
