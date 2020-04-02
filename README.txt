@@ -1,12 +1,11 @@
-Chat between shared data
-Issues to be solved:
-You can't send twice from a single participate
+Inter process communication chat 
 
-How the protocol works:
-
-send_message()    |-> ------ | receiving() 
-waiting_for_done  |          |
-                  | ----- <- | done
-waiting receiving |	     | wait_to_avoid_stalling_second
-		  | ----- <- | send_messege()
- 
+how it works
+* acknowledgement
+* receiver waits for message [the string inside a memory] to be anything rather than nullend
+* sender change the message string
+* recevicer print the messege
+* sender waits for completion character
+* reciver send compilition character
+* a little stall for sync
+* done
