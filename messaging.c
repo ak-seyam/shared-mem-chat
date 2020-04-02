@@ -43,13 +43,6 @@ void reciving(char *shm){
 void stall_sending(char *shm){
 	stall(ENDING_CHAR, shm);
 }
-//TODO :remove this
-void stall_reciving(char *shm){
-	while(*shm == STARTING_CHAR){ // stall till the value of *shm is equal to the stalling char
-		sleep(1);
-	}
-	*shm = '\0'; //cleaning
-}
 
 void stall (char stalling_character, char* shm){
 	while(*shm != stalling_character){ // stall till the value of *shm is equal to the stalling char
