@@ -2,7 +2,7 @@
 
 ## how it works
 * acknowledgement
-* receiver waits for message [the string inside a memory] to be anything rather than nullend
+* receiver waits for message [the string inside a memory] to be anything but null
 * sender change the message string
 * recevicer print the messege
 * sender waits for completion character
