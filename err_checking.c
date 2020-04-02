@@ -2,6 +2,12 @@
 #include<stdio.h>
 #include <stdlib.h>
 
+/**
+ * @Author: Abdullah Khalid
+ * Description: error checking implementation 
+ * Date : 2-4-2020
+ */
+
 void ERRCHECKER_shared_memory_getting(int id){
 	if ( id < 0 )
 	{

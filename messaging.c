@@ -1,3 +1,8 @@
+/**
+ * @Author: Abdullah Khalid
+ * Description: messaging implementation
+ * Date : 2-4-2020
+ */
 #include"messaging.h"
 #include <unistd.h>
 #include<string.h>

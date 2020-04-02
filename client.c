@@ -1,3 +1,8 @@
+/**
+ * @Author: Abdullah Khalid
+ * Description: 
+ * Date : 2-4-2020
+ */
 #include<stdio.h>
 #include<string.h>
 #include<sys/ipc.h>
