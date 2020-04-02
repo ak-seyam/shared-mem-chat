@@ -21,12 +21,13 @@ int main(int argc, char *argv[]){
 	else if (argc == 2)
 		sender = argv[1];
 	// sending and receiving
-	send_message(sender,"what??",shm);
-	reciving(shm);
-	send_message(sender,"woooo",shm);
-	/*reciving(shm);*/
-	send_message(sender,"totally agree!",shm);
-	send_message(sender,"totally agree!",shm);
+	while (1){
+		char message[100];
+		printf("hey %s enter the message: ",sender);
+		scanf("%s",message);
+		send_message(sender,message,shm);
+		reciving(shm);
+	}
 	return 0;
 }
 

@@ -20,12 +20,14 @@ int main(int argc, char *argv[]){
 		sender = "client";
 	else if (argc == 2)
 		sender = argv[1];
-	reciving(shm);
-	send_message(sender,"resp", shm);
-	reciving(shm);
-	/*send_message(sender,"welcome to the best chatting software ever made", shm);*/
-	reciving(shm);
-	reciving(shm);
+	while(1)
+	{
+		reciving(shm);
+		char message[100];
+		printf("hey %s enter the message: ",sender);
+		scanf("%s",message);
+		send_message(sender,message, shm);
+	}
 	return 0;
 }
 
