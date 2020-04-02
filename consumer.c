@@ -1,6 +1,6 @@
 /**
  * @Author: Abdullah Khalid
- * Description: 
+ * Description: an implementation to consumer in ipc
  * Date : 2-4-2020
  */
 #include<stdio.h>
@@ -29,7 +29,7 @@ int main(int argc, char *argv[]){
 	{
 		reciving(shm);
 		char message[100];
-		printf("hey %s enter the message: ",sender);
+		printf("%s> ",sender);
 		gets(message);
 		send_message(sender,message, shm);
 	}

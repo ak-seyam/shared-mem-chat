@@ -1,6 +1,6 @@
 /**
  * @Author: Abdullah Khalid
- * Description: implementation of server the ipc creator
+ * Description: implementation of producer the ipc creator
  * Date : 2-4-2020
  */
 #include<stdio.h>
@@ -28,7 +28,7 @@ int main(int argc, char *argv[]){
 	// sending and receiving
 	while (1){
 		char message[100];
-		printf("hey %s enter the message: ",sender);
+		printf("%s> ",sender);
 		gets(message);
 		send_message(sender,message,shm);
 		reciving(shm);
