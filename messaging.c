@@ -1,26 +1,35 @@
 #include"messaging.h"
 #include <unistd.h>
 #include<string.h>
-#define ENDING_CHAR '\n'
 
 
 void send_message(char *sender, char *message, char *shm){
+	/*printf("log: session opened\n");*/
+	printf("-----------\n");
+	*shm = '*';
+	stall('#',shm);
 	char sent_message[strlen(message)+strlen(sender)+20];
 	sprintf(sent_message,"%s: %s",sender,message);
 	printf("%s\n", sent_message);
        	int message_length = strlen(sent_message); 
 	// copy a message to the shared memory
 	memcpy(shm,sent_message,message_length*sizeof(char)); // now shm points to a string equals message
-
 	// add a '\0' to the string to make it a proper one
 	/*shm += 11; // move 11 steps now shm is right after the hello world thing*/
         *(shm+message_length) = '\0';
-	stall(shm);
-	sleep(1);
+	stall_sending(shm); // stall till the receiver gives an OK response
+	printf("-----------\n");
 }
 
 void reciving(char *shm){
-	// traverse throgh the string pointing to by the shared memory pointer
+	printf("-----------\n");
+	stall('*',shm);
+	*shm = '#';
+	while ( *shm == '#' ){ // internal quick stall
+	}
+	// traverse through the string pointing to by the shared memory pointer
+	
+	while(*shm == '\0'){}// quick stall to prevent the following for from being neglected before sending the actual message 
 	for( char *message = shm; *message != '\0' ; message++)
 	{
 		printf("%c", *message);
@@ -29,12 +38,21 @@ void reciving(char *shm){
 
 	printf("\n");
 	*shm = ENDING_CHAR;
-	sleep(1);
+	printf("-----------\n");
 }
-void stall(char *shm){
-	while (*shm != ENDING_CHAR) // stall and clear
-	{
+void stall_sending(char *shm){
+	stall(ENDING_CHAR, shm);
+}
+//TODO :remove this
+void stall_reciving(char *shm){
+	while(*shm == STARTING_CHAR){ // stall till the value of *shm is equal to the stalling char
 		sleep(1);
 	}
-	*shm = '\0';
+	*shm = '\0'; //cleaning
+}
+
+void stall (char stalling_character, char* shm){
+	while(*shm != stalling_character){ // stall till the value of *shm is equal to the stalling char
+	}
+	*shm = '\0'; //cleaning
 }
