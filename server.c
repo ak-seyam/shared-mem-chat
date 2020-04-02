@@ -24,7 +24,7 @@ int main(int argc, char *argv[]){
 	while (1){
 		char message[100];
 		printf("hey %s enter the message: ",sender);
-		scanf("%s",message);
+		gets(message);
 		send_message(sender,message,shm);
 		reciving(shm);
 	}
